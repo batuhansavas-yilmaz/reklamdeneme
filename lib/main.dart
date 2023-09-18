@@ -27,7 +27,7 @@ class _FirstRouteState extends State<FirstRoute> {
     _bannerAd = BannerAd(
       adUnitId: 'ca-app-pub-3940256099942544/6300978111',
       size: AdSize.banner,
-      request: AdRequest(),
+      request: const AdRequest(),
       listener: BannerAdListener(
         onAdLoaded: (_) {
           setState(() {
@@ -49,9 +49,10 @@ class _FirstRouteState extends State<FirstRoute> {
     _loadBannerAd();
   }
 
+  @override
   void dispose() {
-    super.dispose();
     _bannerAd!.dispose();
+    super.dispose();
   }
 
   @override
@@ -73,13 +74,13 @@ class _FirstRouteState extends State<FirstRoute> {
       ),
       bottomNavigationBar: _isBannerAdReady
           ? SizedBox(
-          width: _bannerAd!.size.width.toDouble(),
-          height: _bannerAd!.size.height.toDouble(),
-          child: AdWidget(ad: _bannerAd!))
+              width: _bannerAd!.size.width.toDouble(),
+              height: _bannerAd!.size.height.toDouble(),
+              child: AdWidget(ad: _bannerAd!))
           : SizedBox(
-        width: _bannerAd!.size.width.toDouble(),
-        height: _bannerAd!.size.height.toDouble(),
-      ),
+              width: _bannerAd!.size.width.toDouble(),
+              height: _bannerAd!.size.height.toDouble(),
+            ),
     );
   }
 }
@@ -100,7 +101,7 @@ class _SecondRouteState extends State<SecondRoute> {
     _bannerAd = BannerAd(
       adUnitId: 'ca-app-pub-3940256099942544/6300978111',
       size: AdSize.banner,
-      request: AdRequest(),
+      request: const AdRequest(),
       listener: BannerAdListener(
         onAdLoaded: (_) {
           setState(() {
@@ -122,6 +123,7 @@ class _SecondRouteState extends State<SecondRoute> {
     _loadBannerAd();
   }
 
+  @override
   void dispose() {
     super.dispose();
     _bannerAd!.dispose();
@@ -143,13 +145,13 @@ class _SecondRouteState extends State<SecondRoute> {
       ),
       bottomNavigationBar: _isBannerAdReady
           ? SizedBox(
-          width: _bannerAd!.size.width.toDouble(),
-          height: _bannerAd!.size.height.toDouble(),
-          child: AdWidget(ad: _bannerAd!))
+              width: _bannerAd!.size.width.toDouble(),
+              height: _bannerAd!.size.height.toDouble(),
+              child: AdWidget(ad: _bannerAd!))
           : SizedBox(
-        width: _bannerAd!.size.width.toDouble(),
-        height: _bannerAd!.size.height.toDouble(),
-      ),
+              width: _bannerAd!.size.width.toDouble(),
+              height: _bannerAd!.size.height.toDouble(),
+            ),
     );
   }
 }
